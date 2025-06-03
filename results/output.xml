@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.12.3 on win32)" generated="2025-06-03T15:38:18.608938" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Tests" source="C:\Users\hamid\SRC\QA\robot\tests\smoke\login_tests.robot">
+<kw name="Open Browser To Login Page" owner="login_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-03T15:38:19.382726" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>https://the-internet.herokuapp.com/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-03T15:38:19.382726" elapsed="13.389196"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-03T15:38:32.771922" elapsed="0.082966"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-06-03T15:38:32.858199" elapsed="0.002026"/>
+</kw>
+<status status="PASS" start="2025-06-03T15:38:19.378002" elapsed="13.482223"/>
+</kw>
+<test id="s1-t1" name="Login With Valid Credentials" line="13">
+<kw name="Input Credentials And Submit" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-03T15:38:32.866481" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-03T15:38:32.860225" elapsed="0.272090"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-03T15:38:33.134384" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-03T15:38:33.134384" elapsed="0.266942"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-03T15:38:33.403313" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-03T15:38:33.401326" elapsed="0.684134"/>
+</kw>
+<status status="PASS" start="2025-06-03T15:38:32.860225" elapsed="1.225235"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-06-03T15:38:34.137558" level="INFO">Current page contains text 'Secure Area'.</msg>
+<arg>Secure Area</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-06-03T15:38:34.087251" elapsed="0.050307"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2025-06-03T15:38:32.860225" elapsed="1.277333"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-03T15:38:34.140934" elapsed="2.329588"/>
+</kw>
+<status status="PASS" start="2025-06-03T15:38:18.611311" elapsed="17.860280"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Login Tests" id="s1" pass="1" fail="0" skip="0">Login Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
