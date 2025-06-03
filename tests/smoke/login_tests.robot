@@ -1,7 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
 Resource          ../../resources/keywords/login_keywords.robot
-Resource          ../../variables/credentials.robot
 
 Suite Setup       Open Browser To Login Page
 Suite Teardown    Close Browser
@@ -13,4 +12,12 @@ ${LOGIN URL}    https://the-internet.herokuapp.com/login
 Login With Valid Credentials
     [Tags]    smoke
     Input Credentials And Submit
-    Page Should Contain    Secure Area
+    Verify Login Success
+
+*** Test Cases ***
+Invalid Login With Wrong Password
+    Set Test Variable    ${PASSWORD}    wrongpassword
+    Input Credentials And Submit
+    Verify Login Failed
+
+
